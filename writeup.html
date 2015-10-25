@@ -280,13 +280,14 @@ accuracy
 
 <h2>Test the model on the test partition</h2>
 
-<pre><code class="r">sum((predict(fit1,newdata=tst) == tst$classe) * 1) / length(tst$classe)
+<pre><code class="r">testAccuracy &lt;- sum((predict(fit1,newdata=tst) == tst$classe) * 1) / length(tst$classe)
+testAccuracy
 </code></pre>
 
 <pre><code>## [1] 0.6613424
 </code></pre>
 
-<p>The accuracy drops on the test partition, but it still does fairly well.  Since I&#39;m running out of time, I will settle with this model.  </p>
+<p>The accuracy drops on the test partition, but it still does fairly well.  Since I&#39;m running out of time, I will settle with this model. Based on the test partition, the out of sample error is 0.339.</p>
 
 <h2>Predictions</h2>
 

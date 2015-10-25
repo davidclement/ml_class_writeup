@@ -63,11 +63,11 @@ accuracy
 
 ## Test the model on the test partition
 ```{r}
-sum((predict(fit1,newdata=tst) == tst$classe) * 1) / length(tst$classe)
+testAccuracy <- sum((predict(fit1,newdata=tst) == tst$classe) * 1) / length(tst$classe)
+testAccuracy
 ```
 
-The accuracy drops on the test partition, but it still does fairly well.  Since I'm running out of time, I will settle with this model.  
-
+The accuracy drops on the test partition, but it still does fairly well.  Since I'm running out of time, I will settle with this model. Based on the test partition, the out of sample error is `r round(1 - testAccuracy,3)`.
 
 ## Predictions
 ```{r}
